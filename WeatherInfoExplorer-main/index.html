@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Weather App</h1>
+
+    <div class="tab-container">
+      <p class="tab current-tab" data-userWeather>Your Weather</p>
+      <!-- <p class="tab" data-searchWeather>Search Weather</p> -->
+    </div>
+
+    <div class="weather-container">
+      <!-- Search form (visible by default) -->
+      <form class="form-container active" data-searchForm>
+        <input placeholder="Search for city..." data-searchInput />
+        <button class="btn" type="submit">
+          <img src="images/search.png" width="20" height="20" />
+        </button>
+      </form>
+
+      <!-- Loading -->
+      <div class="sub-container loading-container">
+        <img src="images/loading.gif" width="150" height="150" loading="lazy" />
+        <p>Loading</p>
+      </div>
+
+      <!-- Weather Info -->
+      <div class="sub-container user-info-container">
+        <div class="name">
+          <p class="city-name"></p>
+        </div>
+
+        <p class="weather-temp"></p>
+
+        <div class="parameter-container">
+          <div class="parameter">
+            <img src="images/wind.png" loading="lazy" />
+            <p>WindSpeed</p>
+            <p class="weather-wind"></p>
+          </div>
+
+          <div class="parameter">
+            <img src="images/humidity.png" loading="lazy" />
+            <p>Humidity</p>
+            <p class="weather-humidity"></p>
+          </div>
+
+          <div class="parameter">
+            <img src="images/air.png" loading="lazy" />
+            <p>Pressure</p>
+            <p class="weather-pressure"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error -->
+    <div class="Error">
+      <img src="images/not-found.png" class="not-found" />
+      <p>City Not Found</p>
+      <button class="retry">Retry</button>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
